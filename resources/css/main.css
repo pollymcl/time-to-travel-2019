@@ -92,6 +92,7 @@ h4 {
 
 a{
     color: var(--link-color);
+    transition: var(--transition-time);
 }
 
 a:hover {
@@ -176,6 +177,41 @@ header .layout-wide {
     border-bottom: 1px solid var(--border-color);
 
 }
+
+@media screen and (min-width: 800px){
+    .nav-prompt {
+    display: none;
+}
+
+.navigation {
+    padding-top: var(--spacer);
+    padding-bottom: var(--spacer);
+}
+.nav-inner ul {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-inner {
+    margin-bottom: 0;
+}
+.nav-inner a {
+    border-bottom: 2px solid transparent;
+}
+}
+
+@media screen and (max-width:800px){
+    .nav-inner {
+        overflow: hidden;
+        transition: var(--transition-time);
+    }
+    .nav-inner[aria-expanded="false"]{
+        max-height: 0;
+    }
+    .nav-inner[aria-expanded="true"] {
+        max-height: 100vh;
+    }
+}
+
 
 /*-------------------------FOOTER*/
 
